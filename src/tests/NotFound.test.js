@@ -15,11 +15,11 @@ describe('Teste o componente <NotFound.js />', () => {
   test('Teste se a página mostra a imagem', () => {
     // acessar os elementos da tela
     renderWithRouter(<NotFound />);
-    const image = screen.getByAltText(
-      /Pikachu crying because the page requested was not found/i,
-    );
     // interagir com os elementos (se for necessário)
     // fazer os testes
-    expect(image).toBeInTheDocument();
+    const imagem = screen.getByAltText(
+      /Pikachu crying because the page requested was not found/i,
+    );
+    expect(imagem.src).toContain('https://media.giphy.com/media/kNSeTs31XBZ3G/giphy.gif');
   });
 });
