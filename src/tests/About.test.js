@@ -15,7 +15,7 @@ describe('Testa o about', () => {
   test('Verifica se a pagina tem um h2 com o texto Avout Pokedex', () => {
     // acessar os elementos da tela
     renderWithRouter(<About />);
-    const titulo = screen.getByRole('heading', 'level: 2');
+    const titulo = screen.getByRole('heading', { name: /About Pokédex/i }, { level: 2 });
     // interagir com os elementos (se for necessário)
     // fazer os testes
     expect(titulo).toBeInTheDocument();
