@@ -12,4 +12,14 @@ describe('Teste o componente <NotFound.js />', () => {
     // fazer os testes
     expect(titulo).toBeInTheDocument();
   });
+  test('Teste se a página mostra a imagem', () => {
+    // acessar os elementos da tela
+    renderWithRouter(<NotFound />);
+    const image = screen.getByAltText(
+      /Pikachu crying because the page requested was not found/i,
+    );
+    // interagir com os elementos (se for necessário)
+    // fazer os testes
+    expect(image).toBeInTheDocument();
+  });
 });

@@ -28,12 +28,12 @@ describe('Testa o about', () => {
     // fazer os testes
     expect(paragrafos).toHaveLength(2);
   });
-  test('Teste se a página contém a seguinte imagem de uma Pokédex: https://cdn2.bulbagarden.net/upload/thumb/8/86/Gen_I_Pok%C3%A9dex.png/800px-Gen_I_Pok%C3%A9dex.png.', () => {
+  test('Teste se a página contém a seguinte imagem de uma Pokédex', () => {
     // acessar os elementos da tela
-    const imageEl = screen.getByAltText(/Pokédex/i);
-    const imageUrl = 'https://cdn2.bulbagarden.net/upload/thumb/8/86/Gen_I_Pok%C3%A9dex.png/800px-Gen_I_Pok%C3%A9dex.png';
+    renderWithRouter(<About />);
     // interagir com os elementos (se for necessário)
     // fazer os testes
-    expect(imageEl.src).toCont(imageUrl);
+    const imagemPokedex = screen.getByAltText(/Pokédex/i);
+    expect(imagemPokedex.src).toContain('https://cdn2.bulbagarden.net/upload/thumb/8/86/Gen_I_Pok%C3%A9dex.png/800px-Gen_I_Pok%C3%A9dex.png');
   });
 });
