@@ -30,11 +30,10 @@ describe('Testa o about', () => {
   });
   test('Teste se a página contém a seguinte imagem de uma Pokédex: https://cdn2.bulbagarden.net/upload/thumb/8/86/Gen_I_Pok%C3%A9dex.png/800px-Gen_I_Pok%C3%A9dex.png.', () => {
     // acessar os elementos da tela
+    const imageEl = screen.getByAltText(/Pokédex/i);
     const imageUrl = 'https://cdn2.bulbagarden.net/upload/thumb/8/86/Gen_I_Pok%C3%A9dex.png/800px-Gen_I_Pok%C3%A9dex.png';
-    const imageEl = screen.getByRole('img', { name: /pokédex/i });
     // interagir com os elementos (se for necessário)
     // fazer os testes
-    expect(imageEl).toHaveProperty('src', imageUrl);
-    expect(imageEl).toHaveProperty('alt', 'Pokédex');
+    expect(imageEl.src).toCont(imageUrl);
   });
 });
