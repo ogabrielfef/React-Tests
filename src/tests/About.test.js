@@ -23,7 +23,7 @@ describe('Testa o about', () => {
   test('Teste se a página contém dois parágrafos com texto sobre a Pokédex', () => {
     // acessar os elementos da tela
     renderWithRouter(<About />);
-    const paragrafos = screen.getByText(/pokémons/i);
+    const paragrafos = screen.getAllByText(/pokémons/i);
     // interagir com os elementos (se for necessário)
     // fazer os testes
     expect(paragrafos).toHaveLength(2);
