@@ -1,4 +1,4 @@
-<h1 align="center"> Tryunfo </h1>
+<h1 align="center"> React Tests</h1>
 
 <p align="center">
 Projeto de criação de tests em React App.
